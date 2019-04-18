@@ -1,0 +1,26 @@
+{
+  "name": "blockchain-js",
+  "version": "1.0.0",
+  "description": "Learn to implement a blockchain in javascript ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "keywords": [
+    "blockchain",
+    "tutorial",
+    "javascript"
+  ],
+  "author": "@joshorig",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.4",
+    "mocha": "^6.0.2",
+    "multer": "^1.4.1",
+    "node-fetch": "^2.3.0",
+    "url-parse": "^1.4.4",
+    "uuid": "^3.3.2"
+  }
+}
