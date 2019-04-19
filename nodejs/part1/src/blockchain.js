@@ -42,7 +42,7 @@
       }
 
       // check that the current blockHash is correct
-      if(currentBlock.hash !== currentBlock.calculateHash()) {
+      if(currentBlock.hash !== Utils.calculateHash(currentBlock)) {
         return false;
       }
 
