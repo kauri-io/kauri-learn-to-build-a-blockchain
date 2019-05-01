@@ -4,6 +4,7 @@
 
   const Consensus   = require('./consensus')
   const parse       = require('url-parse');
+  const Utils = require("./utils");
 
 
   function Blockchain(consensus,blocks){

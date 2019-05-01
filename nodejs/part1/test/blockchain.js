@@ -39,39 +39,39 @@
       assert.strictEqual(blockchain.blocks.length, 2);
       assert.strictEqual(blockchain.blocks[1].data, "some data");
       assert.strictEqual(blockchain.blocks[1].blockNumber, 1);
-      assert.strictEqual(consensus.isChainValid(blockchain.blocks), true);
+      assert.strictEqual(blockchain.isValid(), true);
       blockchain.newBlock("some more data");
       assert.strictEqual(blockchain.blocks.length, 3);
       assert.strictEqual(blockchain.blocks[2].data, "some more data");
       assert.strictEqual(blockchain.blocks[2].blockNumber, 2);
-      assert.strictEqual(consensus.isChainValid(blockchain.blocks), true);
+      assert.strictEqual(blockchain.isValid(), true);
     });
 
     it('Should fail to validate blockchain if new block addded with incorrect previous hash',  function() {
       blockchain.newBlock("some data");
-      assert.strictEqual(consensus.isChainValid(blockchain.blocks), true);
+      assert.strictEqual(blockchain.isValid(), true);
       let block = consensus.mineBlock(3,"some more data","INVALID_HASH");
       blockchain.blocks.push(block);
-      assert.strictEqual(consensus.isChainValid(blockchain.blocks), false);
+      assert.strictEqual(blockchain.isValid(), false);
     });
 
     it('Should fail to validate blockchain if data in a previous block is changed',  function() {
       blockchain.newBlock("some data");
-      assert.strictEqual(consensus.isChainValid(blockchain.blocks), true);
+      assert.strictEqual(blockchain.isValid(), true);
       blockchain.newBlock("some more data");
-      assert.strictEqual(consensus.isChainValid(blockchain.blocks), true);
+      assert.strictEqual(blockchain.isValid(), true);
       blockchain.blocks[1].data = "invalid data";
-      assert.strictEqual(consensus.isChainValid(blockchain.blocks), false);
+      assert.strictEqual(blockchain.isValid(), false);
     });
 
     it('Should fail to validate blockchain if a previous block is swaped for another',  function() {
       blockchain.newBlock("some data");
-      assert.strictEqual(consensus.isChainValid(blockchain.blocks), true);
+      assert.strictEqual(blockchain.isValid(), true);
       blockchain.newBlock("some more data");
-      assert.strictEqual(consensus.isChainValid(blockchain.blocks), true);
+      assert.strictEqual(blockchain.isValid(), true);
       let block = consensus.mineBlock(2,"some data",blockchain.blocks[0].hash); //regenerating the block should result in a different block hash
       blockchain.blocks[1] = block;
-      assert.strictEqual(consensus.isChainValid(blockchain.blocks), false);
+      assert.strictEqual(blockchain.isValid(), false);
     });
 
   });
