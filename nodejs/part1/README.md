@@ -4,7 +4,7 @@ Source code for Kauri series of articles on [Creating a Blockchain | Blocks & Co
 
 ## Installation
 
-1. Install [Node & NPM]
+1. Install [Node & NPM](https://nodejs.org)
 2. Clone this respo
 3. Run `npm install`
 
