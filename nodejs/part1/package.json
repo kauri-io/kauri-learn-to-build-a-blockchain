@@ -14,9 +14,9 @@
   "author": "@joshorig",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.1",
     "crypto-js": "^3.1.9-1",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "mocha": "^6.1.4",
     "multer": "^1.4.1",
     "node-fetch": "^2.3.0",
